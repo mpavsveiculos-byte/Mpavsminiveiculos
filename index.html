@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mpavs Mini Automóveis | Loja Online</title>
+    <!-- Tailwind CSS para Estilização Moderna -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 font-sans antialiased">
+
+    <!-- HEADER / NAVEGAÇÃO -->
+    <header class="bg-slate-900 text-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fa-solid fa-car-side text-yellow-400 text-2xl"></i>
+                <span class="text-xl font-bold tracking-wide">Mpavs <span class="text-yellow-400">Mini Automóveis</span></span>
+            </div>
+            <nav class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="#home" class="hover:text-yellow-400 transition">Início</a>
+                <a href="#produtos" class="hover:text-yellow-400 transition">Catálogo</a>
+                <a href="#sobre" class="hover:text-yellow-400 transition">Sobre Nós</a>
+                <a href="#contato" class="hover:text-yellow-400 transition">Contato</a>
+            </nav>
+            <div>
+                <button onclick="alternarVisao()" id="btn-visao" class="bg-yellow-500 hover:bg-yellow-400 text-slate-900 px-4 py-2 rounded-lg font-semibold text-sm transition flex items-center gap-2">
+                    <i class="fa-solid fa-lock"></i> Área do Colaborador
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTEÚDO DA LOJA (VISÃO CLIENTE) -->
+    <main id="area-loja">
+        <!-- HERO SECTION -->
+        <section id="home" class="bg-gradient-to-r from-slate-900 to-slate-800 text-white py-20">
+            <div class="container mx-auto px-4 text-center max-w-3xl">
+                <span class="bg-yellow-500/20 text-yellow-400 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">A emoção de dirigir começa cedo</span>
+                <h1 class="text-4xl md:text-5xl font-extrabold mt-4 mb-6">Os Melhores Mini Automóveis Infantis</h1>
+                <p class="text-gray-300 text-base md:text-lg mb-8">Carros elétricos, buggies e mini esportivos com segurança, controle remoto para pais e muita diversão.</p>
+                <a href="#produtos" class="bg-yellow-500 hover:bg-yellow-400 text-slate-900 font-bold px-8 py-3 rounded-xl shadow-lg transition inline-block">Ver Catálogo</a>
+            </div>
+        </section>
+
+        <!-- PRODUTOS -->
+        <section id="produtos" class="container mx-auto px-4 py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900">Nossos Modelos em Destaque</h2>
+                <p class="text-gray-600 mt-2">Escolha o veículo perfeito para o seu pequeno piloto</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="vitrine-produtos">
+                <!-- Produto 1 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition">
+                    <img src="https://images.unsplash.com/photo-1594787318286-3d835c1d207f?w=500&auto=format&fit=crop&q=60" alt="Mini Esportivo" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs text-yellow-600 font-bold uppercase">Elétrico 12V</span>
+                        <h3 class="text-lg font-bold text-slate-900 mt-1">Mini Esportivo Red-Line</h3>
+                        <p class="text-gray-500 text-sm mt-2">Com controle remoto parental, cinto de segurança e luzes em LED.</p>
+                        <div class="flex justify-between items-center mt-6">
+                            <span class="text-xl font-extrabold text-slate-900">R$ 1.499,00</span>
+                            <button onclick="comprarProduto('Mini Esportivo Red-Line')" class="bg-slate-900 hover:bg-slate-800 text-white px-4 py-2 rounded-lg text-sm font-semibold transition">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 2 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition">
+                    <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=500&auto=format&fit=crop&q=60" alt="Mini Jeep Off-Road" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs text-yellow-600 font-bold uppercase">Tração 4x4</span>
+                        <h3 class="text-lg font-bold text-slate-900 mt-1">Mini Jeep Off-Road Adventure</h3>
+                        <p class="text-gray-500 text-sm mt-2">Suspensão reforçada e pneus de alta aderência para qualquer terreno.</p>
+                        <div class="flex justify-between items-center mt-6">
+                            <span class="text-xl font-extrabold text-slate-900">R$ 1.899,00</span>
+                            <button onclick="comprarProduto('Mini Jeep Off-Road Adventure')" class="bg-slate-900 hover:bg-slate-800 text-white px-4 py-2 rounded-lg text-sm font-semibold transition">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 3 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition">
+                    <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?w=500&auto=format&fit=crop&q=60" alt="Mini Moto Elétrica" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs text-yellow-600 font-bold uppercase">Infantil 6V</span>
+                        <h3 class="text-lg font-bold text-slate-900 mt-1">Mini Moto Chopper Kids</h3>
+                        <p class="text-gray-500 text-sm mt-2">Estilo clássico chopper, com rodinhas de apoio removíveis.</p>
+                        <div class="flex justify-between items-center mt-6">
+                            <span class="text-xl font-extrabold text-slate-900">R$ 899,00</span>
+                            <button onclick="comprarProduto('Mini Moto Chopper Kids')" class="bg-slate-900 hover:bg-slate-800 text-white px-4 py-2 rounded-lg text-sm font-semibold transition">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOBRE NÓS -->
+        <section id="sobre" class="bg-white py-16 border-t border-gray-100">
+            <div class="container mx-auto px-4 max-w-4xl text-center">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Sobre a Mpavs Mini Automóveis</h2>
+                <p class="text-gray-600 leading-relaxed">Nossa missão é proporcionar momentos inesquecíveis para as crianças, garantindo total segurança, conforto e design realista em cada miniveículo. Trabalhamos com rigorosos testes de qualidade para que a diversão em família aconteça com tranquilidade.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- ÁREA DO COLABORADOR (DASHBOARD - INICIALMENTE OCULTA) -->
+    <div id="area-dashboard" class="hidden container mx-auto px-4 py-8">
+        <div class="flex justify-between items-center mb-8">
+            <div>
+                <h1 class="text-2xl font-bold text-slate-900">Painel do Colaborador</h1>
+                <p class="text-sm text-gray-500">Gestão interna da Mpavs Mini Automóveis</p>
+            </div>
+            <button onclick="alternarVisao()" class="bg-slate-900 hover:bg-slate-800 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-2">
+                <i class="fa-solid fa-arrow-left"></i> Voltar à Loja
+            </button>
+        </div>
+
+        <!-- Cards de Estatísticas -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <p class="text-sm font-medium text-gray-500">Vendas do Mês</p>
+                <h3 class="text-2xl font-bold text-slate-900 mt-1">R$ 38.450,00</h3>
+                <span class="text-xs text-green-600 font-semibold mt-2 inline-block"><i class="fa-solid fa-arrow-up"></i> +12% vs mês passado</span>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <p class="text-sm font-medium text-gray-500">Pedidos Pendentes</p>
+                <h3 class="text-2xl font-bold text-slate-900 mt-1">14</h3>
+                <span class="text-xs text-yellow-600 font-semibold mt-2 inline-block">Aguardando envio</span>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <p class="text-sm font-medium text-gray-500">Produtos no Estoque</p>
+                <h3 class="text-2xl font-bold text-slate-900 mt-1">62 unidades</h3>
+                <span class="text-xs text-blue-600 font-semibold mt-2 inline-block">3 modelos ativos</span>
+            </div>
+        </div>
+
+        <!-- Tabela de Pedidos Recentes -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+            <div class="p-6 border-b border-gray-100 flex justify-between items-center">
+                <h3 class="font-bold text-slate-900">Últimos Pedidos</h3>
+                <span class="text-xs text-gray-400">Atualizado agora há pouco</span>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-gray-50 text-gray-500 text-xs uppercase tracking-wider">
+                            <th class="p-4">ID Pedido</th>
+                            <th class="p-4">Cliente</th>
+                            <th class="p-4">Produto</th>
+                            <th class="p-4">Valor</th>
+                            <th class="p-4">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100 text-sm text-gray-700">
+                        <tr>
+                            <td class="p-4 font-semibold">#MP-9821</td>
+                            <td class="p-4">Mariana Souza</td>
+                            <td class="p-4">Mini Esportivo Red-Line</td>
+                            <td class="p-4 font-bold">R$ 1.499,00</td>
+                            <td class="p-4"><span class="bg-green-100 text-green-700 text-xs px-2.5 py-1 rounded-full font-semibold">Enviado</span></td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-semibold">#MP-9820</td>
+                            <td class="p-4">Carlos Eduardo</td>
+                            <td class="p-4">Mini Jeep Off-Road Adventure</td>
+                            <td class="p-4 font-bold">R$ 1.899,00</td>
+                            <td class="p-4"><span class="bg-yellow-100 text-yellow-700 text-xs px-2.5 py-1 rounded-full font-semibold">Em Separação</span></td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-semibold">#MP-9819</td>
+                            <td class="p-4">Ana Beatriz</td>
+                            <td class="p-4">Mini Moto Chopper Kids</td>
+                            <td class="p-4 font-bold">R$ 899,00</td>
+                            <td class="p-4"><span class="bg-green-100 text-green-700 text-xs px-2.5 py-1 rounded-full font-semibold">Enviado</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="contato" class="bg-slate-900 text-gray-400 py-10 mt-16 border-t border-slate-800">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm">&copy; 2026 Mpavs Mini Automóveis. Todos os direitos reservados.</p>
+            <p class="text-xs text-gray-500 mt-2">Segurança garantida e muita diversão para os pequenos.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT DE CONTROLE DA TELA -->
+    <script>
+        function alternarVisao() {
+            const areaLoja = document.getElementById('area-loja');
+            const areaDashboard = document.getElementById('area-dashboard');
+            const btnVisao = document.getElementById('btn-visao');
+
+            if (areaLoja.classList.contains('hidden')) {
+                areaLoja.classList.remove('hidden');
+                areaDashboard.classList.add('hidden');
+                btnVisao.innerHTML = '<i class="fa-solid fa-lock"></i> Área do Colaborador';
+                btnVisao.classList.remove('bg-slate-700', 'text-white');
+                btnVisao.classList.add('bg-yellow-500', 'text-slate-900');
+            } else {
+                areaLoja.classList.add('hidden');
+                areaDashboard.classList.remove('hidden');
+                btnVisao.innerHTML = '<i class="fa-solid fa-store"></i> Ver Loja';
+                btnVisao.classList.add('bg-slate-700', 'text-white');
+                btnVisao.classList.remove('bg-yellow-500', 'text-slate-900');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function comprarProduto(nomeProduto) {
+            alert(`Você selecionou: ${nomeProduto}!\nEsta é uma demonstração da Mpavs Mini Automóveis.`);
+        }
+    </script>
+</body>
+</html>
